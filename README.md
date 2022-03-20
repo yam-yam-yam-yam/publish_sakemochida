@@ -1,2 +1,2 @@
-# publish_sakemochida
-public practice
+# publishing_sakemochida
+publishing practice
