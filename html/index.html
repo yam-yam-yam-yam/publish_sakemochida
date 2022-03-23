@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="../js/index.js"></script>
 </head>
 <body>
@@ -22,6 +24,7 @@
             <p style="padding-top:10%;">この料理は塩辛いです</p>
         </div>
     </div>
+    
     <section id="repeatSection" class="imgSection">
         <div class="img animate__animated animate__fadeIn" style="background-image: url('../img/kv_slider01.jpg');"></div>
         <div class="img animate__animated animate__fadeIn" style="background-image: url('../img/kv_slider02.jpg');"></div>
@@ -52,8 +55,8 @@
     <section class="contentSection blueSection flex-center" style="height:70%">
         <p class="vertical-typing" style="font-size:1.5em;">泊まる</p>
     </section>
-    <section class="contentSection whiteSection flex-center-x size-full column" style="position:relative; height:150%;">
-        <img src="../img/stay_item01.jpg" style="width:80%; position:absolute; top:-10%;">
+    <section class="contentSection whiteSection flex-center-x size-full column" style="position:relative; height:170%;">
+        <img src="../img/stay_item01.jpg" style="width:70%; position:absolute; top:-10%;">
         <div id="slide" class="flex-center size-full" style="position:absolute; bottom:-10%;">
             <div class="flex column" style="width:25%; margin-right:5%;">
                 <p style="font-size: 1.4em;">木を育てよう</p>
@@ -61,16 +64,34 @@
                     私だけそう思いますか。</p>
                 <p>ハンバーガーはホットクリスピーバーガー</p>
             </div>
-            <img src="../img/stay_slider03.jpg" style="width:45%;">
-                
-            </img>
+            <div class="carousel" style="width:45%;"
+                data-flickity='{"freeScroll": false, "wrapAround": true}'>
+                <div class="carousel-cell">             
+                    <img src="../img/stay_slider01.jpg" class="carousel-cell-image" style="width:100%;">
+                </div>
+                <div class="carousel-cell">             
+                    <img src="../img/stay_slider02.jpg" class="carousel-cell-image" style="width:100%;">
+                </div>
+                <div class="carousel-cell">             
+                    <img src="../img/stay_slider03.jpg" class="carousel-cell-image" style="width:100%;">
+                </div>
+                <div class="carousel-cell">
+                    <img src="../img/stay_slider04.jpg" class="carousel-cell-image" style="width:100%;">
+                </div>
+                <div class="carousel-cell">               
+                    <img src="../img/stay_slider05.jpg" class="carousel-cell-image" style="width:100%;">
+                </div>
+                <div class="carousel-cell">             
+                    <img src="../img/stay_slider06.jpg" class="carousel-cell-image" style="width:100%;">
+                </div>
+            </div>
         </div>
         <div class="flex-center" id="banner" style="position:absolute; bottom:10%; width:100%;">
             <p>2022年度 お祝い</p>
         </div>
     </section>  
-    <section class="contentSection">
-
+    <section class="contentSection blueSection">
+        
     </section>
     <section class="contentSection">
 

@@ -88,7 +88,6 @@ window.onload = () => {
                 imgSections[3].style.display = 'none';
                 break;
             case oneSectionSize*3<window.scrollY&&window.scrollY<oneSectionSize*4 :
-                giveFixed();
                 imgSections[2].style.zIndex = '0';
                 imgSections[3].style.display = 'block';
                 imgSections[3].style.zIndex = '1';
