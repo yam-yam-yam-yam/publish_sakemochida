@@ -1,9 +1,9 @@
-import {htmlCamture} from '../node_modules/html2canvas/dist/html2canvas.js'
+// import {htmlCamture} from '../node_modules/html2canvas/dist/html2canvas.js'
 
 window.onload = () => {
     const html = document.querySelector('html');
     const body = document.querySelector('body');
-
+    console.log(html2canvas(body))
     const repeatingImages = document.querySelectorAll('#repeatSection > .img')
     const imgSections = document.querySelectorAll('.imgSection');
     const contentSections = document.querySelectorAll('.contentSection');

@@ -3,7 +3,6 @@
  * Copyright (c) 2022 Niklas von Hertzen <https://hertzen.com>
  * Released under MIT License
  */
-export function htmlCamture() {
 (function (global, factory) {
     typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
@@ -7828,5 +7827,4 @@ export function htmlCamture() {
     return html2canvas;
 
 })));
-}
 //# sourceMappingURL=html2canvas.js.map
