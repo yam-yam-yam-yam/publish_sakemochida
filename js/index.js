@@ -1,15 +1,18 @@
-// import {htmlCamture} from '../node_modules/html2canvas/dist/html2canvas.js'
-
 window.onload = () => {
     const html = document.querySelector('html');
     const body = document.querySelector('body');
-    console.log(html2canvas(body))
+    const main = document.querySelector('#main');
+    const canvasDom = document.querySelector('#capture')
     const repeatingImages = document.querySelectorAll('#repeatSection > .img')
     const imgSections = document.querySelectorAll('.imgSection');
     const contentSections = document.querySelectorAll('.contentSection');
-    const main = document.querySelector('#main');
     let sectionSize;
 
+    const drawingCanvas = () => {
+        html2canvas(canvasDom).then(canvas => {
+            canvasDom.appendChild(canvas);
+        });
+    }
     const repeatImg = () => {
         let imgIndex=0;
         repeatingImages[0].style.display = 'block';
@@ -62,6 +65,8 @@ window.onload = () => {
     sectionSize = getSectionSize();
 
     window.addEventListener('scroll', () => { 
+        _.throttle(drawingCanvas(),300)
+
         let oneSectionSize = sectionSize/4;
 
         switch (true) {
