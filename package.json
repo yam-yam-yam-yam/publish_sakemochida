@@ -1,0 +1,24 @@
+{
+  "name": "publishing_sakemochida",
+  "version": "1.0.0",
+  "description": "publishing practice",
+  "main": "index.js",
+  "dependencies": {
+    "html2canvas": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yam-yam-yam-yam/publishing_sakemochida.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yam-yam-yam-yam/publishing_sakemochida/issues"
+  },
+  "homepage": "https://github.com/yam-yam-yam-yam/publishing_sakemochida#readme"
+}
