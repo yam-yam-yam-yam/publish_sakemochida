@@ -53,7 +53,7 @@ window.onload = () => {
         repeatingImages.forEach(image => {
             image.style.position = "fixed";
         });   
-    }
+    } 
     const getSectionSize = () => {
         const imgSectionsArray = Array.from(imgSections)
         let currentPage;
@@ -65,7 +65,7 @@ window.onload = () => {
     sectionSize = getSectionSize();
 
     window.addEventListener('scroll', () => { 
-        _.throttle(drawingCanvas(),300)
+        // _.throttle(drawingCanvas(),300)
 
         let oneSectionSize = sectionSize/4;
 
