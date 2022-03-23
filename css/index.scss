@@ -101,6 +101,20 @@ section.blueSection {
 
 section {
     --animate-duration: 3s;
+    #slide {
+        .carousel-cell {
+            width:100%;
+            left: 0% !important;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            z-index: -1;
+        }
+          
+          .carousel-cell.is-selected {
+            opacity: 1;
+            z-index: 0
+          }
+    }
     #slide p:first-child::after{
         content: '';
         display:block;
