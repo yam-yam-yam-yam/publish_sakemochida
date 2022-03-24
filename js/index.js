@@ -8,23 +8,38 @@ window.onload = () => {
     const contentSections = document.querySelectorAll('.contentSection');
     let sectionSize;
 
-    const getBackColor = (scrollY) => {
-        const drawingCanvas = () => {
-            html2canvas(body).then(canvas => {
-                if(canvasDom.hasChildNodes()) canvasDom.removeChild(canvasDom.childNodes[0])
-                canvasDom.appendChild(canvas);
+    //html2canvas로 구현하다 실패
+    // const getBackColor = (scrollY) => {
+    //     const drawingCanvas = () => {
+    //         html2canvas(body).then(canvas => {
+    //             if(canvasDom.hasChildNodes()) canvasDom.removeChild(canvasDom.childNodes[0])
+    //             canvasDom.appendChild(canvas);
 
-                let url = document.querySelector('canvas').toDataURL();
-                console.log(url)
+    //             let url = document.querySelector('canvas').toDataURL();
+    //             console.log(url)
 
-            });
-        }
+    //         });
+    //     }
 
 
-        drawingCanvas();
-        //scrollY를 이용해서 캔버스의 좌표를 지정 후, 색상 구하기
-        //그런데 캡쳐자체가 내 예상과 다르게 됨
-    }
+    //     drawingCanvas();
+    //     //scrollY를 이용해서 캔버스의 좌표를 지정 후, 색상 구하기
+    //     //그런데 캡쳐자체가 내 예상과 다르게 됨
+    // }
+
+    //dom-to-image로 구현중
+    // const getBackColor = (scrollY) => {
+    //     domtoimage.toPng(body)
+    //         .then((dataUrl) => {
+    //             let img = new Image();
+    //             img.src = dataUrl;
+    //             console.log(img)
+    //         })
+    //         .catch((error)=>{
+    //             console.log(error)
+    //         })
+    // }
+
     const repeatImg = () => {
         let imgIndex=0;
         repeatingImages[0].style.display = 'block';
@@ -82,7 +97,6 @@ window.onload = () => {
 
     window.addEventListener('scroll', () => { 
         let oneSectionSize = sectionSize/4;
-
         switch (true) {
             case oneSectionSize>window.scrollY :
                 imgSections[1].style.zIndex = '0';
