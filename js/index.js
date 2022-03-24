@@ -1,8 +1,6 @@
 window.onload = () => {
-    const html = document.querySelector('html');
-    const body = document.querySelector('body');
     const main = document.querySelector('#main');
-    const canvasDom = document.querySelector('#capture')
+    // const canvasDom = document.querySelector('#capture')
     const repeatingImages = document.querySelectorAll('#repeatSection > .img')
     const imgSections = document.querySelectorAll('.imgSection');
     const contentSections = document.querySelectorAll('.contentSection');
