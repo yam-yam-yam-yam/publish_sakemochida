@@ -82,18 +82,31 @@ header {
     background-color: #b6a97e;
     margin-block: 10%;
 }
+@mixin back_image() {
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position:center; 
+}
+
+
+
 section#repeatSection {
     display: block;
     overflow-y: hidden;
     .img {
         @include section();
+        @include back_image();
         display:none;
         position:fixed;
         top:0px;
+        // background-repeat : no-repeat;
+        // background-size : cover;
+        // background-position:center; 
     }
 } 
 section.imgSection {
     @include section();  
+    @include back_image();
     position:fixed;
     display: none;
     top:0px; 
