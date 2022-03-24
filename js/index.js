@@ -96,41 +96,39 @@ window.onload = () => {
     // }, 1000));
 
     window.addEventListener('scroll', () => { 
-        let oneSectionSize = sectionSize/4;
-        switch (true) {
-            case oneSectionSize>window.scrollY :
-                imgSections[1].style.zIndex = '0';
-                imgSections[0].style.display = 'block';
-                imgSections[0].style.zIndex = '1';
-                imgSections[1].style.display = 'none';
-                main.style.display = "flex";
-                break;
-            case oneSectionSize<window.scrollY&&window.scrollY<oneSectionSize*2 :
-                imgSections[0].style.zIndex = '0';
-                imgSections[2].style.zIndex = '0';
-                imgSections[1].style.display = 'block';
-                imgSections[1].style.zIndex = '1';
-                imgSections[0].style.display = 'none';
-                imgSections[2].style.display = 'none';
-                main.style.display = "none";
-                break;
-            case oneSectionSize*2<window.scrollY&&window.scrollY<oneSectionSize*3 :
-                giveFixed();
-                imgSections[1].style.zIndex = '0';
-                imgSections[3].style.zIndex = '0';
-                imgSections[2].style.display = 'block';
-                imgSections[2].style.zIndex = '1';
-                imgSections[1].style.display = 'none';
-                imgSections[3].style.display = 'none';
-                break;
-            case oneSectionSize*3<window.scrollY&&window.scrollY<oneSectionSize*4 :
-                imgSections[2].style.zIndex = '0';
-                imgSections[3].style.display = 'block';
-                imgSections[3].style.zIndex = '1';
-                imgSections[3].style.position = 'fixed'
-                imgSections[2].style.display = 'none';
-                removeFixed();
-                break;
+        const oneSectionSize = sectionSize/(imgSections.length+1);
+        const sizeQuarter = Array.from(imgSections).map((imgSection,i) => {
+            return oneSectionSize * (i+1)
+        });
+
+        const smallSizeQuarter = sizeQuarter.filter((size)=>{
+            return size<window.scrollY
+        })
+
+        if(!smallSizeQuarter.length) {
+            main.style.display = "flex";
+            imgSections[1].style.zIndex = '0';
+            imgSections[0].style.display = 'block';
+            imgSections[0].style.zIndex = '1';
+            imgSections[1].style.display = 'none';
+        } else {
+            main.style.display = "none";
+        }
+        if(smallSizeQuarter.length === sizeQuarter.length) {
+            removeFixed();
+        } else if(smallSizeQuarter.length+1 === sizeQuarter.length) {    
+            giveFixed();
+            imgSections[smallSizeQuarter.length-1].style.zIndex = '0';
+            imgSections[smallSizeQuarter.length].style.display = 'block';
+            imgSections[smallSizeQuarter.length].style.zIndex = '1';
+            imgSections[smallSizeQuarter.length-1].style.display = 'none';
+        } else {
+            imgSections[smallSizeQuarter.length-1].style.zIndex = '0';
+            imgSections[smallSizeQuarter.length+1].style.zIndex = '0';
+            imgSections[smallSizeQuarter.length].style.display = 'block';
+            imgSections[smallSizeQuarter.length].style.zIndex = '1';
+            imgSections[smallSizeQuarter.length-1].style.display = 'none';
+            imgSections[smallSizeQuarter.length+1].style.display = 'none';
         }
     });
 
