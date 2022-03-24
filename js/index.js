@@ -8,10 +8,13 @@ window.onload = () => {
     const contentSections = document.querySelectorAll('.contentSection');
     let sectionSize;
 
-    const drawingCanvas = () => {
-        html2canvas(canvasDom).then(canvas => {
+    const drawingCanvas = (scrollY) => {
+        html2canvas(body).then(canvas => {
+            if(canvasDom.hasChildNodes()) canvasDom.removeChild(canvasDom.childNodes[0])
             canvasDom.appendChild(canvas);
         });
+
+        //scrollY를 이용해서 캔버스의 좌표를 지정 후, 색상 구하기
     }
     const repeatImg = () => {
         let imgIndex=0;
@@ -64,9 +67,11 @@ window.onload = () => {
     }
     sectionSize = getSectionSize();
 
-    window.addEventListener('scroll', () => { 
-        // _.throttle(drawingCanvas(),300)
+    window.addEventListener('scroll', _.throttle(() => {
+        drawingCanvas(window.scrollY);
+    }, 1000));
 
+    window.addEventListener('scroll', () => { 
         let oneSectionSize = sectionSize/4;
 
         switch (true) {
