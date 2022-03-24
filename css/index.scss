@@ -32,13 +32,17 @@ header {
         // color:#b6a97e
     }
 }
-#capture {
-    // background-color: orange;
-    width:300px;
-    height:100px;
-    position:fixed;
-    // z-index: 3;
-}
+// #capture {
+//     width:300px;
+//     height:100px;
+//     position:fixed;
+
+//     canvas {
+//         z-index: 5;
+//         width:300px !important;
+//         height:100px !important;
+//     }
+// }
 #main {
     letter-spacing:3px; 
     line-height:200%;

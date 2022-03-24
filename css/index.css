@@ -34,12 +34,6 @@ header span {
   padding: 20px;
 }
 
-#capture {
-  width: 300px;
-  height: 100px;
-  position: fixed;
-}
-
 #main {
   letter-spacing: 3px;
   line-height: 200%;

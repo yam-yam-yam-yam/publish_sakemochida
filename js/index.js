@@ -8,13 +8,22 @@ window.onload = () => {
     const contentSections = document.querySelectorAll('.contentSection');
     let sectionSize;
 
-    const drawingCanvas = (scrollY) => {
-        html2canvas(body).then(canvas => {
-            if(canvasDom.hasChildNodes()) canvasDom.removeChild(canvasDom.childNodes[0])
-            canvasDom.appendChild(canvas);
-        });
+    const getBackColor = (scrollY) => {
+        const drawingCanvas = () => {
+            html2canvas(body).then(canvas => {
+                if(canvasDom.hasChildNodes()) canvasDom.removeChild(canvasDom.childNodes[0])
+                canvasDom.appendChild(canvas);
 
+                let url = document.querySelector('canvas').toDataURL();
+                console.log(url)
+
+            });
+        }
+
+
+        drawingCanvas();
         //scrollY를 이용해서 캔버스의 좌표를 지정 후, 색상 구하기
+        //그런데 캡쳐자체가 내 예상과 다르게 됨
     }
     const repeatImg = () => {
         let imgIndex=0;
@@ -67,9 +76,9 @@ window.onload = () => {
     }
     sectionSize = getSectionSize();
 
-    window.addEventListener('scroll', _.throttle(() => {
-        drawingCanvas(window.scrollY);
-    }, 1000));
+    // window.addEventListener('scroll', _.throttle(() => {
+    //     getBackColor(window.scrollY);
+    // }, 1000));
 
     window.addEventListener('scroll', () => { 
         let oneSectionSize = sectionSize/4;
