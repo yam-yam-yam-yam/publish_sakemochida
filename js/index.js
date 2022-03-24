@@ -28,17 +28,17 @@ window.onload = () => {
     // }
 
     //dom-to-image로 구현중
-    const getBackColor = (scrollY) => {
-        domtoimage.toPng(body)
-            .then((dataUrl) => {
-                let img = new Image();
-                img.src = dataUrl;
-                console.log(img)
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
-    }
+    // const getBackColor = (scrollY) => {
+    //     domtoimage.toPng(body)
+    //         .then((dataUrl) => {
+    //             let img = new Image();
+    //             img.src = dataUrl;
+    //             console.log(img)
+    //         })
+    //         .catch((error)=>{
+    //             console.log(error)
+    //         })
+    // }
 
     const repeatImg = () => {
         let imgIndex=0;
@@ -91,13 +91,12 @@ window.onload = () => {
     }
     sectionSize = getSectionSize();
 
-    window.addEventListener('scroll', _.throttle(() => {
-        getBackColor(window.scrollY);
-    }, 1000));
+    // window.addEventListener('scroll', _.throttle(() => {
+    //     getBackColor(window.scrollY);
+    // }, 1000));
 
     window.addEventListener('scroll', () => { 
         let oneSectionSize = sectionSize/4;
-
         switch (true) {
             case oneSectionSize>window.scrollY :
                 imgSections[1].style.zIndex = '0';
