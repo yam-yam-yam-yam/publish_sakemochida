@@ -5,6 +5,14 @@
           box-sizing: border-box;
 }
 
+*::-moz-selection {
+  background-color: #b6a97e;
+}
+
+*::selection {
+  background-color: #b6a97e;
+}
+
 @font-face {
   font-family: 'GmarketSansMedium';
   src: url("../font/JKG-L_3.ttf") format("woff");

@@ -98,11 +98,10 @@ window.onload = () => {
         const sizeQuarter = Array.from(imgSections).map((imgSection,i) => {
             return (oneSectionSize * (i+1))-180
         });
-
         const smallSizeQuarter = sizeQuarter.filter((size)=>{
             return size<window.scrollY
         })
-        console.log(sizeQuarter);
+
         if(!smallSizeQuarter.length) {
             main.style.display = "flex";
             imgSections[1].style.zIndex = '0';
