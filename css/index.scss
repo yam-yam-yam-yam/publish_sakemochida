@@ -1,7 +1,8 @@
 *{
     font-family: GmarketSansMedium; 
-    font-weight: 700;
+    font-weight: 500;
     box-sizing: border-box;
+    // transition: font-size 0.8s;
 } 
 @font-face {
     font-family: 'GmarketSansMedium';
@@ -47,7 +48,7 @@ header {
 #main {
     letter-spacing:3px; 
     line-height:200%;
-    font-size:1.4em;
+    font-size:3.5vmin;
     color:#ffffff;
     position:fixed;
     z-index: 2;
@@ -113,7 +114,7 @@ section.imgSection {
     color:#ffffff;
     letter-spacing:3px; 
     line-height:200%;
-    font-size:1.7em;
+    font-size:3vmin;
 }
 section.contentSection {
     width:100%;
@@ -163,9 +164,39 @@ section {
 }
 
 
+section:nth-of-type(6) {
+    padding:10%;
+    height:initial;
+    font-size:2.5vmin;
+    #slide {
+        width:100%;
+        padding:15% 0%;
+    }
+    #slide > div:nth-of-type(1) {
+        width:25%;
+    }
+    #slide > div:nth-of-type(2) {
+        width:45%;
+    }
 
-
-
+}
+@media screen and (max-width: 900px){
+    section:nth-of-type(6) {
+        height:initial;
+        padding-top:15%;
+        #slide {
+            display:flex;
+            width:100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            height:initial;
+        }
+        #slide > div:nth-of-type(1),#slide > div:nth-of-type(2) {
+            width:80%;
+        }
+    }
+}
 section:nth-of-type(9) {
     justify-content:space-between; 
     width:100%;

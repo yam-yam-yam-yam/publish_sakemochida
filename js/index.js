@@ -96,13 +96,13 @@ window.onload = () => {
     window.addEventListener('scroll', () => { 
         const oneSectionSize = sectionSize/(imgSections.length+1);
         const sizeQuarter = Array.from(imgSections).map((imgSection,i) => {
-            return oneSectionSize * (i+1)
+            return (oneSectionSize * (i+1))-180
         });
 
         const smallSizeQuarter = sizeQuarter.filter((size)=>{
             return size<window.scrollY
         })
-
+        console.log(sizeQuarter);
         if(!smallSizeQuarter.length) {
             main.style.display = "flex";
             imgSections[1].style.zIndex = '0';
@@ -120,7 +120,7 @@ window.onload = () => {
             imgSections[smallSizeQuarter.length].style.display = 'block';
             imgSections[smallSizeQuarter.length].style.zIndex = '1';
             imgSections[smallSizeQuarter.length-1].style.display = 'none';
-        } else {
+        } else if(smallSizeQuarter.length) {
             imgSections[smallSizeQuarter.length-1].style.zIndex = '0';
             imgSections[smallSizeQuarter.length+1].style.zIndex = '0';
             imgSections[smallSizeQuarter.length].style.display = 'block';
